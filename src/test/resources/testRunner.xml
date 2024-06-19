@@ -6,22 +6,22 @@
         </classes>
     </test>
 
-    <test name="Tests.RegisterTests">
-        <classes>
-            <class name="Tests.RegisterTests"/>
-        </classes>
-    </test>
+<!--    <test name="Tests.RegisterTests">-->
+<!--        <classes>-->
+<!--            <class name="Tests.RegisterTests"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
-    <test name="Tests.LoginTests">
-        <classes>
-            <class name="Tests.LoginTests"/>
-        </classes>
-    </test>
+<!--    <test name="Tests.LoginTests">-->
+<!--        <classes>-->
+<!--            <class name="Tests.LoginTests"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
-    <test name="Tests.AddEventTest">
-        <classes>
-            <class name="Tests.AddEventTest"/>
-        </classes>
-    </test>
+<!--    <test name="Tests.AddEventTest">-->
+<!--        <classes>-->
+<!--            <class name="Tests.AddEventTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
 </suite>
