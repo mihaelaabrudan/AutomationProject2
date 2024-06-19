@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Tests.SimpleTest">
+    <test name="Tests.SimpleTest">
+        <classes>
+            <class name="Tests.SimpleTest"/>
+        </classes>
+    </test>
+
+<!--    <test name="Tests.RegisterTests">-->
+<!--        <classes>-->
+<!--            <class name="Tests.RegisterTests"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="Tests.LoginTests">-->
+<!--        <classes>-->
+<!--            <class name="Tests.LoginTests"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="Tests.AddEventTest">-->
+<!--        <classes>-->
+<!--            <class name="Tests.AddEventTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+</suite>
