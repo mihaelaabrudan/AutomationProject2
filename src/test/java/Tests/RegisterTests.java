@@ -28,17 +28,21 @@ public class RegisterTests extends BaseTest {
 
         // Citirea input-ului de la utilizator
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Introduceți tipul de utilizator (customer/trainer): ");
+        System.out.println("Introduceți tipul de utilizator (customer/trainer): ");
         String userType = scanner.nextLine();
+
 
         // Bifează checkbox-ul corespunzător
         if (userType.equalsIgnoreCase("customer")) {
+            System.out.println("Ați ales opțiunea: customer");
             registerPage.checkCustomer();
         } else if (userType.equalsIgnoreCase("trainer")) {
+            System.out.println("Ați ales opțiunea: trainer");
             registerPage.checkTrainer();
         } else {
             System.out.println("Tip de utilizator necunoscut.");
         }
+        //scanner.close();
 
         registerPage.submitForm();
     }

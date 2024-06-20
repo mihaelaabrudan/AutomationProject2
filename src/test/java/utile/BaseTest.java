@@ -25,6 +25,8 @@ public class BaseTest {
 
     @BeforeClass  //inainte sa fie rulata o clasa o sa se faca setarile pentru driver din aceasta metoda
     public void setupClass(){
+        WebDriverManager.chromedriver().clearDriverCache().setup();
+        WebDriverManager.chromedriver().clearResolutionCache().setup();
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(); //initializare driver
         screenshotUtils = new ScreenshotUtils(driver);
@@ -47,9 +49,11 @@ public class BaseTest {
        }
 
        // Flush the report
-       if (extentReports != null) {
+      if (extentReports != null) {
            extentReports.flush();
        }
+
+
    }
 
     /**

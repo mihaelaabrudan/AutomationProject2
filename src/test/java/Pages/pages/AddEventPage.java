@@ -10,7 +10,9 @@ public class AddEventPage {
 
 
     public AddEventPage(WebDriver driver) {
+
         this.driver = driver;
+
     }
 
     /*public void clickMonthView() {
@@ -20,11 +22,20 @@ public class AddEventPage {
 
      */
 
+    // Metodă pentru a adăuga titlul evenimentului
+    //public void seteventTitle(String eventTitle) {
+        //driver.findElement(eventTitleField).sendKeys(eventTitle);
+
+   // }
+
+    // Metodă pentru a goli câmpul de text al titlului evenimentului
+    public void clearEventTitle() {
+        driver.findElement(eventTitleField).clear();
+    }
 
     // Metodă pentru a adăuga titlul evenimentului
-    public void seteventTitle(String eventTitle) {
+    public void setEventTitle(String eventTitle) {
         driver.findElement(eventTitleField).sendKeys(eventTitle);
-
     }
 
 
