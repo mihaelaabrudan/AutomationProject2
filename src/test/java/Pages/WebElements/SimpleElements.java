@@ -10,6 +10,7 @@ public class SimpleElements {
     public SimpleElements(WebDriver driver){
         this.driver = driver;
     }
+
     public WebElement logInText(){
         return driver.findElement(By.className("loginPageID"));
 
