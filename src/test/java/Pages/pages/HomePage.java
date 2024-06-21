@@ -12,9 +12,10 @@ import java.time.Duration;
 
 public class HomePage {
 
-    private WebDriver driver;
+    public WebDriver driver;
 
     public HomePage(WebDriver driver) {
+
         this.driver = driver;
     }
 
@@ -45,25 +46,20 @@ public class HomePage {
     // Metodă pentru a da click pe data specificată
 
     /*public AddEventPage clickCalendarDay() {
-        // Găsește elementul
+
         // Așteaptă până când elementul este prezent
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-       // WebElement dayElement1 = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='fc-daygrid-day-frame fc-scrollgrid-sync-inner']//a[@aria-label='June 30, 2024']")));
-        WebElement dayElement2 = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='fc-daygrid-day-frame fc-scrollgrid-sync-inner']//a[@aria-label='June 24, 2024']")));
-       // WebElement dayElement3 = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='fc-daygrid-day-frame fc-scrollgrid-sync-inner']//a[@aria-label='June 26, 2024']")));
-       // WebElement dayElement4 = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='fc-daygrid-day-frame fc-scrollgrid-sync-inner']//a[@aria-label='June 28, 2024']")));
+
+        // Găsește elementul
+       WebElement dayElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='fc-daygrid-day-frame fc-scrollgrid-sync-inner']//a[@aria-label='June 30, 2024']")));
 
 
         // Click pe elementul
-       // dayElement1.click();
-        dayElement2.click();
-        //dayElement3.click();
-        //dayElement4.click();
+       dayElement.click();
+
 
         // Returnează o nouă instanță a clasei RegisterPage
         return new AddEventPage(driver);
-
-
     }
 
      */
@@ -84,5 +80,33 @@ public class HomePage {
     }
 
 
-
+    public FoundMonthPage goToAugust2024() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        while (true) {
+            try {
+                WebElement nextButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button.fc-next-button.fc-button.fc-button-primary")));
+                nextButton.click();
+                wait.until(ExpectedConditions.stalenessOf(nextButton));
+                WebElement monthTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2.fc-toolbar-title")));
+                if (monthTitle.getText().equals("August 2024")) {
+                    break;
+                }
+            } catch (org.openqa.selenium.TimeoutException e) {
+                System.out.println("Elementul nu a fost găsit în timpul alocat: " + e.getMessage());
+                // Poți arunca o excepție sau poți face o altă acțiune aici
+            }
+        }
+        return new FoundMonthPage(driver);
+    }
+    public EventPage clickEvent(String eventDescription) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        try {
+            WebElement eventElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='fc-daygrid-day-events']//a[.//i[text()='" + eventDescription + "']]")));
+            eventElement.click();
+        } catch (org.openqa.selenium.TimeoutException e) {
+            System.out.println("Elementul nu a fost găsit în timpul alocat: " + e.getMessage());
+        }
+        return new EventPage(driver);
+    }
 }
+

@@ -26,6 +26,12 @@ public class AddEventTest extends BaseTest {
         // Click pe data și navighează la RegisterPage
         //AddEventPage addeventPage =homePage.clickCalendarDay();
 
+        // Adaugă titlul evenimentului
+        //addeventPage.seteventTitle("Automation Training");
+
+        // Apasă butonul de creare a evenimentului
+        //addeventPage.clickCreateEventButton();
+
         // Lista de date la care vrem să adăugăm evenimente
         String[] dates = {"June 24, 2024", "June 26, 2024", "June 28, 2024"};
 
@@ -35,15 +41,6 @@ public class AddEventTest extends BaseTest {
             addEventPage.setEventTitle("Eveniment pentru " + date);
             addEventPage.clickCreateEventButton();
         }
-
-        // Adaugă titlul evenimentului
-        //addeventPage.seteventTitle("Automation Training");
-
-        // Apasă butonul de creare a evenimentului
-        //addeventPage.clickCreateEventButton();
-
-
-
 
 
     }

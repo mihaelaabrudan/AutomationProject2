@@ -22,11 +22,6 @@ public class AddEventPage {
 
      */
 
-    // Metodă pentru a adăuga titlul evenimentului
-    //public void seteventTitle(String eventTitle) {
-        //driver.findElement(eventTitleField).sendKeys(eventTitle);
-
-   // }
 
     // Metodă pentru a goli câmpul de text al titlului evenimentului
     public void clearEventTitle() {
