@@ -80,24 +80,28 @@ public class HomePage {
     }
 
 
-    public FoundMonthPage goToAugust2024() {
+
+    public FoundMonthPage goToDecember2024() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         while (true) {
             try {
-                WebElement nextButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button.fc-next-button.fc-button.fc-button-primary")));
+                WebElement nextButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.fc-next-button.fc-button.fc-button-primary")));
                 nextButton.click();
                 wait.until(ExpectedConditions.stalenessOf(nextButton));
                 WebElement monthTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2.fc-toolbar-title")));
-                if (monthTitle.getText().equals("August 2024")) {
+                if (monthTitle.getText().equals("December 2024")) {
+                    System.out.println("Ați ajuns la luna Decembrie 2024.");
                     break;
                 }
             } catch (org.openqa.selenium.TimeoutException e) {
                 System.out.println("Elementul nu a fost găsit în timpul alocat: " + e.getMessage());
-                // Poți arunca o excepție sau poți face o altă acțiune aici
+                break;
             }
         }
         return new FoundMonthPage(driver);
     }
+
+
     public EventPage clickEvent(String eventDescription) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         try {

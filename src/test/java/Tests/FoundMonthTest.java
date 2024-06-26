@@ -20,9 +20,9 @@ public class FoundMonthTest extends BaseTest {
         loginPage.submitButton();
 
         // Navigare până la luna August 2024
-        FoundMonthPage foundMonthPage = homePage.goToAugust2024();
+        FoundMonthPage foundMonthPage = homePage.goToDecember2024();
 
         // Verificare dacă luna curentă este August 2024
-        assert foundMonthPage.isAugust2024();
+        assert foundMonthPage.isDecember2024() : "Luna curentă nu este December 2024!";
     }
 }

@@ -29,7 +29,7 @@ public class RegisterUser extends BaseTest {
         register.setcity("Cluj-Napoca");
         register.setpassword("1111");
         register.customer();
-        register.submit();
+        register.clickSubmitButton();
 
 
 
