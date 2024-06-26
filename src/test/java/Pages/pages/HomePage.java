@@ -85,11 +85,17 @@ public class HomePage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         while (true) {
             try {
-                WebElement nextButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.fc-next-button.fc-button.fc-button-primary")));
+//                WebElement nextButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.fc-next-button.fc-button.fc-button-primary")));
+//                nextButton.click();
+                //wait.until(ExpectedConditions.stalenessOf(nextButton));
+//                WebElement monthTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".fc-toolbar-title")));
+
+                WebElement nextButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".fc-next-button")));
                 nextButton.click();
-                wait.until(ExpectedConditions.stalenessOf(nextButton));
-                WebElement monthTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2.fc-toolbar-title")));
+                WebElement monthTitle = driver.findElement(By.cssSelector(".fc-toolbar-title"));
+
                 if (monthTitle.getText().equals("December 2024")) {
+
                     System.out.println("Ați ajuns la luna Decembrie 2024.");
                     break;
                 }

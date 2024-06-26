@@ -13,7 +13,7 @@ public class FoundMonthPage {
     }
 
     public boolean isDecember2024() {
-        WebElement toolbarTitle = driver.findElement(By.cssSelector("h2.fc-toolbar-title"));
+        WebElement toolbarTitle = driver.findElement(By.cssSelector(".fc-toolbar-title"));
         return toolbarTitle.getText().equals("December 2024");
     }
 }
