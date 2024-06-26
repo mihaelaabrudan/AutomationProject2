@@ -16,6 +16,7 @@ public class Login {
         element.registerButton().click();
     }
 
+
     public void setuserEmail(String userEmail){
         element.userEmail().sendKeys(userEmail);
 
@@ -30,8 +31,10 @@ public class Login {
 
     }
 
-    public String getLoginText(){
-        return element.LoginText().getText();
+    public String errorForbiddenAccesText(){
+        return element.errorForbiddenAccess().getText();
     }
+
+
 
 }
