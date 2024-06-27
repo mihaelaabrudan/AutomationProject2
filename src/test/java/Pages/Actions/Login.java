@@ -16,6 +16,11 @@ public class Login {
         element.registerButton().click();
     }
 
+    public void clickLoginButton(){
+        element.loginButton().click();
+    }
+
+
 
     public void setuserEmail(String userEmail){
         element.userEmail().sendKeys(userEmail);
@@ -31,7 +36,7 @@ public class Login {
 
     }
 
-    public String errorForbiddenAccesText(){
+    public String errorForbiddenAccessText(){
         return element.errorForbiddenAccess().getText();
     }
 

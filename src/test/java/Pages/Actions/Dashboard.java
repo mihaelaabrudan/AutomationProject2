@@ -1,6 +1,6 @@
-package Actions;
+package Pages.Actions;
 
-import WebElements.DashboardElements;
+import Pages.WebElements.DashboardElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

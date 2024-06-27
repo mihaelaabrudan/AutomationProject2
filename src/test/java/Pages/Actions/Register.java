@@ -64,7 +64,7 @@ public class Register {
     public void registerUser(boolean isTrainer) {
         setfirstname("Mihaela");
         setlastname("Abrudan");
-        setphoneNumber("009770123");
+        setphoneNumber("009770125679");
         setemail("miha.abrudan@gmail.com");
         setcity("Cluj-Napoca");
         setpassword("1111");

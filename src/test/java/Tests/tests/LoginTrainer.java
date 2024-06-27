@@ -1,5 +1,6 @@
 package Tests.tests;
 
+import Pages.Actions.Dashboard;
 import Pages.Actions.Login;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,14 +14,14 @@ import java.time.Duration;
 public class LoginTrainer extends BaseTest {
 
  private Login login = null;
- private Actions.Dashboard dashboard = null;
+ private Dashboard dashboard = null;
 
  @Test
  public void loginTrainer(){
 
   initTest("Login trainer");
   login = new Login(driver);
-  dashboard = new Actions.Dashboard(driver);
+  dashboard = new Dashboard(driver);
 
   login.setuserEmail("miha.abrudan@gmail.com");
   login.setuserPassword("1111");

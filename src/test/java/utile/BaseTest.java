@@ -19,7 +19,7 @@ public class BaseTest {
 
     public WebDriver driver;
     private ExtentTest extentTest;
-    private ScreenshotUtils screenshotUtils;
+    protected ScreenshotUtils screenshotUtils;
     protected HomePage homePage;
     private static ExtentReports extentReports;
 

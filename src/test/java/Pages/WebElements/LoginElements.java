@@ -3,16 +3,30 @@ package Pages.WebElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.List;
 
 public class LoginElements {
-    private WebDriver driver = null;
+    private WebDriver driver;
+    private WebDriverWait wait;
 
-    public LoginElements(WebDriver driver){
+    public LoginElements(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     public WebElement registerButton(){
         return driver.findElement(By.className("navigation__link"));
+
+    }
+
+
+
+    public WebElement loginButton(){
+        return driver.findElement(By.cssSelector(".navigation__link.login"));
 
     }
 
@@ -33,9 +47,12 @@ public class LoginElements {
         return driver.findElement(By.id("submitButton"));
     }
 
-    public WebElement errorForbiddenAccess(){
-        return (WebElement) driver.findElements(By.cssSelector("#errorForbiddenAccess"));
+    public WebElement errorForbiddenAccess() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("errorForbiddenAccess")));
+        return driver.findElement(By.id("errorForbiddenAccess"));
     }
+
+
 
 
 }
