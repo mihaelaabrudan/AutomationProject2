@@ -7,6 +7,8 @@ import java.util.Properties;
 public class ConfigLoader {
 
     private Properties properties;
+    private static ConfigLoader instance;
+
     public ConfigLoader(String propertyFilePath){
         properties = new Properties();
 
@@ -18,6 +20,16 @@ public class ConfigLoader {
         }
 
     }
+
+    public static ConfigLoader getInstance(String propertyFilePath) {
+        if (instance == null) {
+            instance = new ConfigLoader(propertyFilePath);
+        }
+        return instance;
+    }
+
+
+
     public String getProperty(String key){
         return properties.getProperty(key);
     }
